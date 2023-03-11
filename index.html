@@ -13,6 +13,10 @@
         $.ajax({
           url: "https://api.jikan.moe/v3/search/anime",
           data: { q: animeName },
+          headers: {
+            "Content-Type": "application/json",
+            "X-My-Custom-Header": "YOUR_API_KEY"
+          },
           success: function(result) {
             var animeData = result.results[0];
             var animeTitle = animeData.title;
