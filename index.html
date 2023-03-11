@@ -1,33 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>動漫搜索器</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$("#searchForm").submit(function(event){
-				event.preventDefault();
-				var searchQuery = $("#searchQuery").val();
-				var apiUrl = "https://api.jikan.moe/v3/search/anime?q=" + encodeURI(searchQuery);
-				$.get(apiUrl, function(data){
-					var resultHtml = "";
-					$.each(data.results, function(index, anime){
-						resultHtml += "<h3>" + anime.title + "</h3>";
-						resultHtml += "<p>" + anime.synopsis + "</p>";
-					});
-					$("#searchResults").html(resultHtml);
-				});
-			});
-		});
-	</script>
+	<title>我的網頁</title>
 </head>
 <body>
-	<h1>動漫搜索器</h1>
-	<form id="searchForm">
-		<label for="searchQuery">輸入動漫作品名：</label>
-		<input type="text" id="searchQuery" name="searchQuery">
-		<button type="submit">搜索</button>
-	</form>
-	<div id="searchResults"></div>
+	<h1>歡迎來到我的網頁</h1>
+	<p>這是一個簡單的網頁，用來示範 HTML 基礎。下面是一張圖片：</p>
+	<img src="https://via.placeholder.com/150" alt="示範圖片">
 </body>
 </html>
